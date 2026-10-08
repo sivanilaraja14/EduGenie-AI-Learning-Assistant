@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGenie - AI Learning Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+<header class="hero">
+    <div>
+        <p class="eyebrow">AI-POWERED LEARNING ASSISTANT</p>
+        <h1>Welcome to EduGenie 🧠✨</h1>
+        <p>Your personal AI tutor for questions, explanations, quizzes, summaries and learning paths.</p>
+    </div>
+</header>
+
+<main class="container">
+    <section class="card">
+        <label for="task">Choose a learning task</label>
+        <select id="task">
+            <option value="qa">Ask a Question</option>
+            <option value="explain">Explain a Topic</option>
+            <option value="quiz">Generate a Quiz</option>
+            <option value="summarize">Summarize Text</option>
+            <option value="learn">Learning Recommendations</option>
+        </select>
+
+        <label for="inputText" id="inputLabel">Your question</label>
+        <textarea id="inputText" rows="7" placeholder="e.g. Why is the sky blue?"></textarea>
+        <button id="submitButton">Get Answer</button>
+    </section>
+
+    <section id="resultCard" class="card result-card hidden">
+        <div class="result-heading">
+            <h2 id="resultTitle">Result</h2>
+            <span id="status" class="status"></span>
+        </div>
+        <div id="result" class="result"></div>
+    </section>
+</main>
+
+<footer>
+    <span>EduGenie • FastAPI + Google Gemini + LaMini-Flan-T5</span>
+</footer>
+
+<script src="{{ url_for('static', path='app.js') }}"></script>
+</body>
+</html>
